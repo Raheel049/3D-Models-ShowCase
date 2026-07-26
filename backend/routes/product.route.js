@@ -1,35 +1,36 @@
 import express from "express";
-import * as productController from "../controller/product.controller.js";
-import authMiddleware
+import { authMiddleware } from "../middleware/middleware.js";
+import * as productController from '../controllers/product/product.controller.js'
 
-const router = express.Router();
 
-router.post(
+const productRouter = express.Router();
+
+productRouter.post(
   "/create-product",
   authMiddleware,
   productController.createProduct
 );
 
-router.get(
+productRouter.get(
   "/get-all",
   productController.getProducts
 );
 
-router.get(
-  "/get-product:id",
+productRouter.get(
+  "/get-product/:id",
   productController.getProduct
 );
 
-router.put(
-  "/update:id",
+productRouter.put(
+  "/update-product/:id",
   authMiddleware,
   productController.updateProduct
 );
 
-router.delete(
-  "/delete-product:id",
+productRouter.delete(
+  "/delete-product/:id",
   authMiddleware,
   productController.deleteProduct
 );
 
-export default router;
+export default productRouter;

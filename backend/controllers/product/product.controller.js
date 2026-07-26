@@ -1,8 +1,8 @@
-import * as productService from "../service/product.service.js";
+import * as productService from "../../services/product.service.js"
 import {
   createProductSchema,
   updateProductSchema,
-} from "../validation/product.validation.js";
+} from "../../validation/product.validation.js";
 
 export const createProduct = async (req, res) => {
   try {
@@ -18,7 +18,7 @@ export const createProduct = async (req, res) => {
     const product =
       await productService.createProduct({
         ...req.body,
-        createdBy: req.user._id,
+        createdBy: req.user.id,
       });
 
     return res.status(201).json({
