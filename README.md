@@ -95,3 +95,102 @@ Current Progress
 ⬜ Product Hotspots
 
 ⬜ Collections
+
+
+## Step 3 — Product Variants
+
+Each product can have multiple variants.
+
+Example
+
+Modern Chair
+
+↓
+
+Black
+
+White
+
+Brown
+
+Leather
+
+Wood
+
+Each variant can have its own
+
+- Images
+- 3D Model
+- Material
+- Color
+
+(in next module)
+
+### Features
+
+- Create Variant
+- Get Variants
+- Get Variant
+- Update Variant
+- Delete Variant
+
+### Fields
+
+- Product
+- Variant Name
+- SKU
+- Color
+- Material
+- Is Default
+- Display Order
+- Status
+
+### APIs
+
+POST    /api/variant/create-variant
+
+GET     /api/variant/get-all
+
+GET     /api/variant/get-variant/:id
+
+PUT     /api/variant/update/:id
+
+DELETE  /api/variant/delete/:id
+
+---
+
+# Database Structure
+
+Category
+
+↓
+
+Product
+
+↓
+
+Product Variant
+
+↓
+
+Product Media
+
+↓
+
+Product Hotspots
+
+---
+
+Current Progress
+
+✅ Categories
+
+✅ Products
+
+✅ Product Variants
+
+⬜ Product Media
+
+⬜ Product Hotspots
+
+⬜ Collections

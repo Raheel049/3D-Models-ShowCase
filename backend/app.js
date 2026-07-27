@@ -7,6 +7,8 @@ import cors from 'cors'
 import cookieParser from "cookie-parser";
 import productRouter from "./routes/product.route.js";
 import categoryRouter from './routes/category.route.js'
+import variantRouter from "./routes/variant.route.js";
+import uploadRouter from "./routes/productMedia.route.js";
 
 const app = express()
 
@@ -27,7 +29,9 @@ dbConnect();
 
 app.use('/api/auth',authRoute);
 app.use("/api/product", productRouter);
-app.use("/api/category", categoryRouter)
+app.use("/api/category", categoryRouter);
+app.use("/api/variant", variantRouter);
+app.use("/api/upload-product", uploadRouter);
 
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
