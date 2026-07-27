@@ -19,3 +19,26 @@ export const getMediaById = async (id) => {
 export const deleteMedia = async (id) => {
   return await ProductMedia.findByIdAndDelete(id);
 };
+
+
+export const findModelByVariant = async (variantId) => {
+  return await ProductMedia.findOne({
+    variant: variantId,
+    mediaType: "model",
+  });
+};
+
+
+export const resetPrimaryImages = async (variantId) => {
+
+  return await ProductMedia.updateMany(
+      {
+          variant: variantId,
+          mediaType:"image"
+      },
+      {
+          isPrimary:false
+      }
+  );
+
+};
